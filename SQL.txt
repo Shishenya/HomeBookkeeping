@@ -1,0 +1,14 @@
+CREATE TABLE categoryCost (
+idCategory INT IDENTITY(1,1) NOT NULL,
+nameCategory varchar(50) NOT NULL,
+PRIMARY KEY (idCategory)
+);
+
+CREATE TABLE expenditure (
+idExpenditure INT IDENTITY(1,1) NOT NULL,
+idCategoryExpenditure INT FOREIGN KEY REFERENCES categoryCost(idCategory),
+costExpenditure float(2),
+comment TEXT,
+dateExpenditure DATE,
+PRIMARY KEY (idExpenditure)
+);
